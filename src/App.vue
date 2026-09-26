@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from "vue";
+import BatchPricePage from "./components/BatchPricePage.vue";
 
 type Field = {
   key: string;
@@ -125,6 +126,7 @@ const records = ref<RecordItem[]>(loadRecords());
 const form = reactive<Record<string, string | number>>(createBlank());
 const note = ref("");
 const filter = ref(project.filters[0]);
+const page = ref<"single" | "batch">("single");
 
 const filteredRecords = computed(() => {
   if (filter.value.startsWith("全部")) return records.value;
@@ -205,6 +207,12 @@ function remove(id: string) {
         </div>
       </header>
 
+      <nav class="tabs">
+        <button type="button" :class="{ active: page === 'single' }" @click="page = 'single'">单条维护</button>
+        <button type="button" :class="{ active: page === 'batch' }" @click="page = 'batch'">批量调价</button>
+      </nav>
+
+      <template v-if="page === 'single'">
       <section class="metrics">
         <article v-for="(label, index) in project.metricLabels" :key="label" class="metric">
           <span>{{ label }}</span>
@@ -268,6 +276,9 @@ function remove(id: string) {
           </div>
         </section>
       </section>
+      </template>
+
+      <BatchPricePage v-else />
     </div>
   </main>
 </template>

@@ -251,6 +251,122 @@ textarea {
   padding: 32px 12px;
 }
 
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.tabs button {
+  background: #fff;
+  color: #445069;
+  border: 1px solid #d9e2ee;
+}
+
+.tabs button.active {
+  background: #176b87;
+  color: #fff;
+  border-color: #176b87;
+}
+
+.batch-page {
+  display: grid;
+  gap: 18px;
+}
+
+.hint {
+  margin: 0 0 12px;
+  color: #69758c;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.paste-area {
+  min-height: 120px;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 13px;
+}
+
+.message {
+  color: #176b87;
+  font-size: 14px;
+  align-self: center;
+}
+
+.batch-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.batch-table th, .batch-table td {
+  border: 1px solid #dfe7f1;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.batch-table th {
+  background: #f2f6fb;
+  color: #445069;
+  white-space: nowrap;
+}
+
+.batch-table input, .batch-table select {
+  padding: 6px 8px;
+}
+
+.batch-table.readonly td {
+  color: #536078;
+}
+
+.exception-panel {
+  border-color: #e5b8ae;
+}
+
+.reasons {
+  margin: 0;
+  padding-left: 18px;
+  color: #c84b31;
+  font-size: 13px;
+}
+
+.status.frozen {
+  background: #eef0f4;
+  color: #445069;
+}
+
+.batch-record {
+  margin-bottom: 12px;
+}
+
+.version-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.version-head {
+  margin: 0 0 8px;
+  color: #445069;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.supplement-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+  border-top: 1px dashed #d9e2ee;
+  padding-top: 12px;
+}
+
+.error-text {
+  margin: 0;
+  color: #c84b31;
+  font-size: 13px;
+}
+
 @media (max-width: 860px) {
   .app { padding: 18px; }
   .topbar, .workspace { grid-template-columns: 1fr; }
